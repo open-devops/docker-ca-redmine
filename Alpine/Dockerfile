@@ -14,6 +14,22 @@ MAINTAINER Open DevOps Team <open.devops@gmail.com>
 # old cached versions when the Dockerfile is built.
 ENV REFRESHED_AT 2016-08-25
 
+# Redmine Environment Info
+ENV RAILS_ENV=production \
+    REDMINE_VERSION=3.3.0 \
+    REDMINE_DOWNLOAD_MD5=0c0abb2d4efde455c3505d8caf01cb2d
+
+# Gem Environment Info
+ENV GEM_HOME /usr/local/bundle \
+    BUNDLE_PATH="$GEM_HOME" \
+    BUNDLE_BIN="$GEM_HOME/bin" \
+    BUNDLE_SILENCE_ROOT_WARNING=1 \
+    BUNDLE_APP_CONFIG="$GEM_HOME" \
+    PATH $BUNDLE_BIN:$PATH
+
+# Work Directory
+WORKDIR /usr/src/redmine
+
 RUN mkdir -p /usr/local/etc \
 	&& { \
 		echo 'install: --no-document'; \
