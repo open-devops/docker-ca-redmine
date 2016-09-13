@@ -81,8 +81,13 @@ RUN apk --update add --virtual .redmine-rundeps \
 	&& rm -rf /var/cache/apk/* \
 	&& adduser -h ${PWD} -D -H -s /sbin/nologin redmine \
 	&& chown -R redmine:redmine ./
+
 VOLUME /usr/src/redmine/files
+
 COPY docker-entrypoint.sh /
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
+
 EXPOSE 3000
+
 CMD ["rails", "server", "-b", "0.0.0.0"]
