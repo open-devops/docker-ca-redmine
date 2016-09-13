@@ -84,4 +84,5 @@ RUN apk --update add --virtual .redmine-rundeps \
 VOLUME /usr/src/redmine/files
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-EXPOSE 3000 CMD ["rails", "server", "-b", "0.0.0.0"]
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]
