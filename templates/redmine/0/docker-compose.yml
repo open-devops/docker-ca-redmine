@@ -1,0 +1,5 @@
+# Requirement Management : Redmine 
+redmine:
+  image: devopsopen/docker-ca-redmine
+  ports:
+    - "19092:3000"

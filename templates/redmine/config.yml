@@ -1,0 +1,8 @@
+name: Jenkins
+description: |
+  Open DevOps Redmine Catalog
+version: 1.0.0
+category: CA 
+maintainer: open.devops@gmail.com
+license: Apache 2
+projectURL: https://github.com/open-devops/docker-ca-redmine
